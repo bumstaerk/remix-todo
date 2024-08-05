@@ -1,8 +1,8 @@
-import { Table, getTableName, sql } from 'drizzle-orm';
-import env from '~/env';
-import { db, connection } from '~/db';
-import * as schema from '~/db/schema';
-import * as seeds from './seeds';
+import { Table, getTableName, sql } from "drizzle-orm";
+import env from "~/env";
+import { db, connection } from "~/db";
+import * as schema from "~/db/schema";
+import * as seeds from "./seeds";
 
 if (!env.DB_SEEDING) {
   throw new Error('You must set DB_SEEDING to "true" when running seeds');
@@ -10,16 +10,15 @@ if (!env.DB_SEEDING) {
 
 async function resetTable(db: db, table: Table) {
   return db.execute(
-    sql.raw(`TRUNCATE TABLE ${getTableName(table)} RESTART IDENTITY CASCADE`),
+    sql.raw(`TRUNCATE TABLE ${getTableName(table)} RESTART IDENTITY CASCADE`)
   );
 }
 
-for (const table of [
-  schema.tasks
-]) {
+for (const table of [schema.tasks, schema.states]) {
   await resetTable(db, table);
 }
 
+await seeds.states(db);
 await seeds.tasks(db);
 
 await connection.end();

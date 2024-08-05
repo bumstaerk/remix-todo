@@ -1,0 +1,1 @@
+ALTER TABLE "tasks" ALTER COLUMN "state_id" SET DEFAULT 1;

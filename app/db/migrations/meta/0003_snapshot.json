@@ -1,9 +1,38 @@
 {
-  "id": "cb59ec44-2ef8-4fe5-b419-11878aa7e24b",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "25ddec12-f321-45a0-b931-bd7ea7d67d6d",
+  "prevId": "3bca4325-5970-4ab6-a86a-e6b9a2a16d2f",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
+    "public.states": {
+      "name": "states",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(56)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order": {
+          "name": "order",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "default": 0
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
     "public.tasks": {
       "name": "tasks",
       "schema": "",
@@ -24,7 +53,15 @@
           "name": "state_id",
           "type": "integer",
           "primaryKey": false,
-          "notNull": false
+          "notNull": false,
+          "default": 1
+        },
+        "order": {
+          "name": "order",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "default": 0
         },
         "created_at": {
           "name": "created_at",

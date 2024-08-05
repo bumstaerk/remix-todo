@@ -5,15 +5,29 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1722778849438,
-      "tag": "0000_short_puppet_master",
+      "when": 1722858591729,
+      "tag": "0000_perfect_stature",
       "breakpoints": true
     },
     {
       "idx": 1,
       "version": "7",
-      "when": 1722779397636,
-      "tag": "0001_whole_phalanx",
+      "when": 1722858857889,
+      "tag": "0001_sticky_mad_thinker",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1722859035174,
+      "tag": "0002_burly_the_hand",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1722859148796,
+      "tag": "0003_omniscient_daimon_hellstrom",
       "breakpoints": true
     }
   ]
